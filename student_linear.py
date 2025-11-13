@@ -111,6 +111,12 @@ if submitted:
         
         
         st.success(f"## Predicted Final Score: **{prediction:.2f}**")
+        if prediction > 75:
+            st.info("Good Score")
+        elif prediction >= 50:
+            st.warning("Average Score")
+        else:
+            st.error("Low Score")
     except Exception as e:
         st.error(f"Prediction failed. Please check your model artifacts. Error: {e}")
         
